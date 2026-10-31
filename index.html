@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Карточка стратега</title>
+<meta name="theme-color" content="#0a0e1a">
+<meta name="description" content="RPG-трекер личного развития: смотри на себя как стратег.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+<header class="hero">
+  <div class="row"><input id="name" aria-label="Имя персонажа" maxlength="40" autocomplete="off"><button class="ico" data-act="settings" aria-label="Настройки">⚙️</button></div>
+  <div class="meta"><span class="cls" id="cls"></span><span class="lvl mono" id="lvl"></span></div>
+  <div class="xp"><i id="xpfill"></i></div>
+  <div class="row"><span class="mono muted" id="xptxt"></span><button class="pri" data-act="xp">＋ Опыт</button></div>
+</header>
+<section id="stats"></section>
+<div class="two"><section id="buffs"></section><section id="debuffs"></section></div>
+<div class="two"><section id="strengths"></section><section id="weaknesses"></section></div>
+<section id="mission"></section>
+<section id="diary"></section>
+<section class="backup">
+  <h2>💾 Резервная копия</h2>
+  <div class="row"><button data-act="export">⬇️ Экспорт JSON</button><button data-act="import">⬆️ Импорт JSON</button></div>
+  <input type="file" id="file" accept=".json,application/json" hidden>
+  <button class="pri" id="inst" data-act="install" hidden>📲 Установить на телефон</button>
+</section>
+</main>
+<dialog id="dlg">
+  <h2>⚙️ Настройки</h2>
+  <p>Данные хранятся только на этом устройстве, в памяти браузера. Для надёжности иногда делай экспорт JSON.</p>
+  <div class="row"><button class="bad" data-act="reset">Сбросить к демо-данным</button><button data-act="close">Закрыть</button></div>
+</dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
